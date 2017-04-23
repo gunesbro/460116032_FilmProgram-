@@ -1,0 +1,105 @@
+﻿<Window xmlns:UserControls="clr-namespace:_460116032_FilmProgramı.UserControls"  x:Class="_460116032.Windows.HomePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_460116032.Windows"
+        mc:Ignorable="d"
+        Title="HomePage" Height="auto" Width="auto" ResizeMode="CanMinimize" WindowState="Maximized" WindowStyle="ThreeDBorderWindow" MinHeight="760" MinWidth="1200" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Storyboard x:Key="İsikAcilma" AutoReverse="False">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Offset)" Storyboard.TargetName="stckİsik">
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Offset)" Storyboard.TargetName="stckİsik">
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="stckİsik">
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FF1C1C1F"/>
+                <EasingColorKeyFrame KeyTime="0:0:2" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource İsikAcilma}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid Background="#FF121314">
+        <DockPanel >
+            <Border BorderThickness="0,0,0.1,0" BorderBrush="Black">
+                <DockPanel Background="#FF1C1C1F" Width="100">
+                    <StackPanel>
+                        <StackPanel x:Name="stckİsik" Margin="10,20,10,10">
+                            <StackPanel.Background>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#FF1C1C1F" Offset="1"/>
+                                    <GradientStop Color="White"/>
+                                </RadialGradientBrush>
+                            </StackPanel.Background>
+                            <Image x:Name="imgCinsiyet" Height="80" Width="80" >
+                            </Image>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Name="txtkAd" Foreground="WhiteSmoke" TextAlignment="Center"></TextBlock>
+                        </StackPanel>
+                        <StackPanel>
+                            <Image Source="/Images/cizgi.png" Height="15" Width="15"></Image>
+                        </StackPanel>
+                        <Border BorderThickness="1" BorderBrush="Black" Margin="10"></Border>
+
+                        <Border Margin="10,50,10,10" BorderThickness="5,0,0,0" Height="50" BorderBrush="Green" Tag="brdrAra" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" >
+                            <StackPanel VerticalAlignment="Bottom" Cursor="Hand" Tag="Ara" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown_2">
+                                <Image Height="20" Width="20" Source="/Images/ara.png"></Image>
+                                <TextBlock Text="Ara" TextAlignment="Center" FontSize="18" Foreground="WhiteSmoke"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Margin="10,25,10,10" BorderThickness="5,0,0,0" Height="50" BorderBrush="#FFF5FF08" Tag="brdrAna"  MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" >
+                            <StackPanel VerticalAlignment="Bottom" Cursor="Hand" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown" Tag="Anasayfa">
+                                <Image Height="20" Width="20" Source="/Images/home.png"></Image>
+                                <TextBlock Text="Anasayfa" TextAlignment="Center" FontSize="18" Foreground="WhiteSmoke"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Margin="10,25,10,10" BorderThickness="5,0,0,0" Height="50" BorderBrush="Maroon" Tag="brdrListe"  MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" >
+                            <StackPanel VerticalAlignment="Bottom" Cursor="Hand" Tag="Listem" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
+                                <Image Height="20" Width="20" Source="/Images/liste.png"></Image>
+                                <TextBlock Text="Listem" TextAlignment="Center" FontSize="18" Foreground="WhiteSmoke"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Margin="10,25,10,10" BorderThickness="5,0,0,0" Height="50" BorderBrush="#FF004B88" Tag="brdrTop20"  MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" >
+                            <StackPanel VerticalAlignment="Bottom" Cursor="Hand" Tag="Top20" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown" >
+                                <Image Height="20" Width="20" Source="/Images/top-movies.png"></Image>
+                                <TextBlock Text="Top 10" TextAlignment="Center" FontSize="18" Foreground="WhiteSmoke"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Margin="10,25,10,10" BorderThickness="5,0,0,0" Height="50" BorderBrush="#FF3D3038" Tag="brdrVizyon"  MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" >
+                            <StackPanel VerticalAlignment="Bottom" Cursor="Hand" Tag="Ekle" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown" >
+                                <Image Height="20" Width="20" Source="/Images/özel.png"></Image>
+                                <TextBlock Text="Özel" TextAlignment="Center" FontSize="18" Foreground="WhiteSmoke"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Margin="10,25,10,10" BorderThickness="5,0,0,0" Height="50" BorderBrush="#FF340088" Tag="brdrAyarlar"  MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" >
+                            <StackPanel VerticalAlignment="Bottom" Cursor="Hand" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown" Tag="Ayarlar">
+                                <Image Height="20" Width="20" Source="/Images/ayarlar.png"></Image>
+                                <TextBlock Text="Ayarlar" TextAlignment="Center" FontSize="18" Foreground="WhiteSmoke"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </DockPanel>
+            </Border>
+            <Canvas x:Name="cnvs" >
+                <StackPanel x:Name="stck"  >
+                    
+                </StackPanel>
+            </Canvas>
+            <StackPanel>
+                <StackPanel >
+                    <Frame x:Name="frmGezinti" NavigationUIVisibility="Hidden" ></Frame>
+                </StackPanel>
+            </StackPanel>
+
+        </DockPanel>
+
+
+    </Grid>
+</Window>
