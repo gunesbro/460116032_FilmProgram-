@@ -75,7 +75,7 @@ namespace _460116032_FilmProgramı.UserControls
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 200);
 
-            string url = String.Format("http://www.omdbapi.com/?t={0}&y={1}&plot=full&r=xml", txtFilmAd.Text, txtVizyonYıl.Text);
+            string url = String.Format("http://www.omdbapi.com/?apikey=eca8fdee&t={0}&y={1}&plot=full&r=xml", txtFilmAd.Text, txtVizyonYıl.Text);
 
             xml.Load(url);
 
