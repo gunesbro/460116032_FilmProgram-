@@ -6,4 +6,4 @@ Visual Studio Sql Data Tools eklentisini indirmeniz gerekir.
 Eğer Local database ile ilgili problem yaşarsanız Proje dosyasındaki Query dosyasını kullanarak kendi database inizi oluşturup projeye 
 ekleyebilirsiniz.
 
-![alt text](http://prntscr.com/pwrl0v)
+![Giriş Ekranı](https://github.com/gunesbro/FilmProgram-/blob/master/1.png)
